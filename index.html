@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Checkbox as Radio Button</title>
+  <style>
+    /* Hide the default checkbox */
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    /* Style the custom radio container */
+    .custom-radio {
+      display: block;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 16px;
+      width: 16px;
+      background-color: #fff;
+      border: 2px solid gray;
+      border-radius: 50%;
+    }
+
+    /* Style the checked state of the custom radio button */
+    .custom-radio input[type="checkbox"]:checked+.checkmark {
+      background-color: fff;
+      border: 2px solid black;
+    }
+
+    /* Style the label text */
+    .checkmark::after {
+      content: "";
+      position: absolute;
+      display: block;
+      background-color: gray;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .custom-radio input[type="checkbox"]:checked+.checkmark::after {
+      display: block;
+      background-color: black;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <label class="custom-radio">
+    <input type="checkbox">
+    <span class="checkmark"></span>
+    Option 1
+  </label>
+  <label class="custom-radio">
+    <input type="checkbox">
+    <span class="checkmark"></span>
+    Option 2
+  </label>
+  <label class="custom-radio">
+    <input type="checkbox">
+    <span class="checkmark"></span>
+    Option 3
+  </label>
+</body>
+
+</html>
